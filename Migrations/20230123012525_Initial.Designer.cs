@@ -12,7 +12,7 @@ using UserManagementApi.Models;
 namespace UserManagementApi.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230122225825_Initial")]
+    [Migration("20230123012525_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,7 +50,7 @@ namespace UserManagementApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 #pragma warning restore 612, 618
         }
