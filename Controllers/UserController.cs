@@ -53,7 +53,7 @@ namespace UserManagementApi.Controllers
         }
 
         [Route("UserAuthentication")]
-        [HttpPost]
+        [HttpGet]
         public async Task<ActionResult<User>> UserAuthentication(string email, string password)
         {
             try
