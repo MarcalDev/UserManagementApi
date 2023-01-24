@@ -46,14 +46,14 @@ namespace UserManagementApi.Repositorys
             }
         }
 
-        public async Task<User> PostUser(User user)
+        public async Task<int> PostUser(User user)
         {
             var query = "INSERT INTO USERS (Id,Name,Email,PhoneNumber,Password,RealeaseDate,isActive) VALUES " +
                 $"('{user.Id}', '{user.Name}', '{user.Email}','{user.PhoneNumber}', '{user.Password}', '{user.RealeaseDate}', 1)";
 
             using (var connection = _context.CreateConnection())
             {
-                var result = await connection.QueryFirstOrDefaultAsync<User>(query);                
+                var result = await connection.ExecuteAsync(query);                
                 return result;
             }
         }
